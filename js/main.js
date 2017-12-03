@@ -2,6 +2,7 @@ function setup() {
   let cnv = createCanvas(windowWidth, windowHeight);
   cnv.position(0, 0);
   initButtons();
+  onGameStart();
 }
 
 function draw() {
@@ -23,4 +24,8 @@ function mouseClicked() {
   if (!testStart()) {
     buttons.startGame.testClick();
   }
+}
+
+function preload() {
+  initAssets();
 }
