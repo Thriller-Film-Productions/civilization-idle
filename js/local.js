@@ -24,7 +24,8 @@ if (/*localStorage.getItem("gameData")*/false) {
         pound: 0,
         dollar: 0
       },
-      gameSize: 12,
+      gameWid: 10,
+      gameHig: 10,
       settings: {scrollSpeed: 8}
     }
     saveGame();

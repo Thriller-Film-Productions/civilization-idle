@@ -18,15 +18,18 @@ function draw() {
     text("Start", width / 2 - textWidth("Start") / 2, height / 2 + 12);
   } else {
     testScroll();
-    for (var i = 0; i < gameData.gameSize; i++) {
-      for (var j = 0; j < gameData.gameSize; j++) {
+    for (var i = 0; i < gameData.gameWid; i++) {
+      for (var j = 0; j < gameData.gameHig; j++) {
         image(assets.tile, i * 200, j * 200);
       }
     }
-    strokeWidth(12);
-    stroke(51);
-    for (var i = 0; i < 200*gameData.gameSize; i+=50) {
-    line()
+    strokeWeight(4);
+    stroke(51, 50);
+    for (var i = 0; i < 200 * gameData.gameHig; i += 50) {
+      line(0, i, 200 * gameData.gameWid, i);
+    }
+    for (var i = 0; i < 200 * gameData.gameWid; i += 50) {
+      line(i, 0, i, gameData.gameHig * 200);
     }
   }
 }
@@ -46,7 +49,7 @@ function testScroll() {
   } else if (keyCode === LEFT_ARROW && keyIsPressed) {
     transVect.x = transVect.x + gameData.settings.scrollSpeed;
   } else if (keyCode === RIGHT_ARROW && keyIsPressed) {
-    transVect.x = transVect.x-gameData.settings.scrollSpeed;
+    transVect.x = transVect.x - gameData.settings.scrollSpeed;
   }
   translate(transVect.x, transVect.y);
 }
