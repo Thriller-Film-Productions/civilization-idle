@@ -20,6 +20,7 @@ function draw() {
     testScroll();
     showTiles();
     gridLines();
+    image(assets.menu, width/1.1, height/128);
   }
 }
 
