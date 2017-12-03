@@ -4,4 +4,5 @@ function initButtons() {
 
 function initAssets() {
   assets.tile = loadImage("assets/tile.png");
+  assets.build = loadImage("assets/hammer.png");
 }
