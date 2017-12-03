@@ -11,7 +11,7 @@ function testStart() {
 }
 
 function onGameStart() {
-  if (localStorage.getItem("gameData")) {
+if (/*localStorage.getItem("gameData")*/false) {
     gameData = JSON.parse(localStorage.getItem("gameData"));
   } else {
     gameData = {
@@ -23,7 +23,9 @@ function onGameStart() {
         aureus: 0,
         pound: 0,
         dollar: 0
-      }
+      },
+      gameSize: 12,
+      settings: {scrollSpeed: 8}
     }
     saveGame();
   }
@@ -32,3 +34,5 @@ function onGameStart() {
 function saveGame() {
   localStorage.setItem("gameData", JSON.stringify(gameData));
 }
+
+setInterval(saveGame, 5000);
