@@ -21,6 +21,15 @@ function draw() {
     showTiles();
     gridLines();
     image(assets.menu, width/1.1, height/128);
+    if (mouseX >= width/1.1 && mouseX <= width/1.1+125 && mouseY >= height/128 && mouseY <= height/128+125 || menuOn && mouseX >= width/1.1-menuWidth && mouseX <= width/1.1+125 && mouseY >= height/128 && mouseY <= height/128+125) {
+      menuOn = true;
+    } else {
+      menuOn = false;
+    }
+    if (menuOn) {
+      console.log("showing...")
+      buttons.build.show();
+    }
   }
 }
 
@@ -31,7 +40,6 @@ function mouseClicked() {
 }
 
 function testScroll() {
-  console.log(transVect);
   if (keyCode === UP_ARROW && keyIsPressed) {
     transVect.y = transVect.y + gameData.settings.scrollSpeed;
   } else if (keyCode === DOWN_ARROW && keyIsPressed) {

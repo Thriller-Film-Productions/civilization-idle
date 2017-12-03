@@ -1,5 +1,6 @@
 function initButtons() {
   buttons.startGame = new button(width/2-100, height/2-50, 200, 100, color(0, 150, 0), startGame);
+  buttons.build = new button(width/1.1-125, height/128, 128, 128, color(0, 0, 0), () => {}, assets.build);
 }
 
 function initAssets() {
