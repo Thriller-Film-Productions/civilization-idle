@@ -7,6 +7,7 @@ function button(x, y, width, height, colory, onClick) {
   this.onClick = onClick
   this.show = () => {
     fill(this.color);
+    noStroke();
     rect(this.x, this.y, this.width, this.height);
   }
   this.testClick = () => {
