@@ -23,6 +23,11 @@ function draw() {
         image(assets.tile, i * 200, j * 200);
       }
     }
+    strokeWidth(12);
+    stroke(51);
+    for (var i = 0; i < 200*gameData.gameSize; i+=50) {
+    line()
+    }
   }
 }
 
