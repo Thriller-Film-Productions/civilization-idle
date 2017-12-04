@@ -11,7 +11,7 @@ function button(x, y, width, height, colory, onClick, static, imagey, startX, st
   this.startX = startX;
   this.startY = startY;
   this.constartX = startX;
-  this.constY = startY;
+  this.constartY = startY;
   this.time = time;
   this.static = static;
   this.show = () => {
@@ -29,7 +29,7 @@ function button(x, y, width, height, colory, onClick, static, imagey, startX, st
     noStroke();
     if (static) {
       if (this.image === undefined) {
-        rect(this.x - tranVect.x, this.y - transVect.y, this.width, this.height);
+        rect(this.x - transVect.x, this.y - transVect.y, this.width, this.height);
       } else {
         image(this.image, this.x - transVect.x, this.y - transVect.y);
       }
@@ -48,7 +48,7 @@ function button(x, y, width, height, colory, onClick, static, imagey, startX, st
         return true;
       }
     } else {
-      if (this.x + transVect.x <= mouseX && this.x + transVect.x + this.width >= mouseX && this.y + transVect.y <= mouseY && this.y + transVect.y + this.height >= mouseY) {
+      if (this.x - transVect.x <= mouseX && this.x - transVect.x + this.width >= mouseX && this.y - transVect.y <= mouseY && this.y - transVect.y + this.height >= mouseY) {
         onClick();
         return true;
       }
