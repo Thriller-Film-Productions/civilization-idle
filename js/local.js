@@ -11,7 +11,7 @@ function testStart() {
 }
 
 function onGameStart() {
-if (/*localStorage.getItem("gameData")*/false) {
+  if ( /*localStorage.getItem("gameData")*/ false) {
     gameData = JSON.parse(localStorage.getItem("gameData"));
   } else {
     gameData = {
@@ -26,7 +26,9 @@ if (/*localStorage.getItem("gameData")*/false) {
       },
       gameWid: 10,
       gameHig: 10,
-      settings: {scrollSpeed: 8}
+      settings: {
+        scrollSpeed: 8
+      }
     }
     saveGame();
   }
