@@ -1,4 +1,4 @@
-function button(x, y, width, height, colory, onClick, imagey, startX, startY, time) {
+function button(x, y, width, height, colory, onClick, static, imagey, startX, startY, time) {
   this.x = x;
   this.y = y;
   this.constX = x;
@@ -13,6 +13,7 @@ function button(x, y, width, height, colory, onClick, imagey, startX, startY, ti
   this.constartX = startX;
   this.constY = startY;
   this.time = time;
+  this.static = static;
   this.show = () => {
     if (this.startX !== undefined) {
       console.log('lerping');
@@ -26,16 +27,31 @@ function button(x, y, width, height, colory, onClick, imagey, startX, startY, ti
     }
     fill(this.color);
     noStroke();
-    if (this.image === undefined) {
-      rect(this.x, this.y, this.width, this.height);
+    if (static) {
+      if (this.image === undefined) {
+        rect(this.x - tranVect.x, this.y - transVect.y, this.width, this.height);
+      } else {
+        image(this.image, this.x - transVect.x, this.y - transVect.y);
+      }
     } else {
-      image(this.image, this.x, this.y);
+      if (this.image === undefined) {
+        rect(this.x, this.y, this.width, this.height);
+      } else {
+        image(this.image, this.x, this.y);
+      }
     }
   }
   this.testClick = () => {
-    if (this.x <= mouseX && this.x + this.width >= mouseX && this.y <= mouseY && this.y + this.height >= mouseY) {
-      onClick();
-      return true;
+    if (static) {
+      if (this.x <= mouseX && this.x + this.width >= mouseX && this.y <= mouseY && this.y + this.height >= mouseY) {
+        onClick();
+        return true;
+      }
+    } else {
+      if (this.x + transVect.x <= mouseX && this.x + transVect.x + this.width >= mouseX && this.y + transVect.y <= mouseY && this.y + transVect.y + this.height >= mouseY) {
+        onClick();
+        return true;
+      }
     }
   }
 }

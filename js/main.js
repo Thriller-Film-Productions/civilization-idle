@@ -20,8 +20,8 @@ function draw() {
     testScroll();
     showTiles();
     gridLines();
-    image(assets.menu, width / 1.1, height / 128);
-    if (mouseX >= width / 1.1 && mouseX <= width / 1.1 + 125 && mouseY >= height / 128 && mouseY <= height / 128 + 125 || menuOn && mouseX >= width / 1.1 - menuWidth && mouseX <= width / 1.1 + 125 && mouseY >= height / 128 && mouseY <= height / 128 + 125) {
+    image(assets.menu, width / 1.1 - transVect.x, height / 1.2 - transVect.y);
+    if (mouseX >= width / 1.1 && mouseX <= width / 1.1 + 125 && mouseY >= height / 1.2 && mouseY <= height / 1.2 + 125 || menuOn && mouseX >= width / 1.1 - menuWidth && mouseX <= width / 1.1 + 125 && mouseY >= height / 1.2 && mouseY <= height / 1.2 + 125) {
       pmenuOn = menuOn;
       menuOn = true;
     } else {
@@ -30,7 +30,7 @@ function draw() {
 
     if (menuOn !== pmenuOn && menuOn === false) {
       buttons.build.startX = width / 1.1;
-      buttons.build.startY = height / 128;
+      buttons.build.startY = height / 1.2;
     }
 
     if (menuOn) {
