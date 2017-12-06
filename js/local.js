@@ -22,7 +22,7 @@ function onGameStart() {
         pound: 0,
         dollar: 0
       },
-      wheat: 0,
+      food: 0,
       gameWid: 10,
       gameHig: 10,
       settings: {
