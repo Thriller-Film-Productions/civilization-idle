@@ -16,14 +16,13 @@ function onGameStart() {
   } else {
     gameData = {
       moneys: {
-        shekels: 0,
-        gold: 0,
         yuan: 0,
         drachma: 0,
         aureus: 0,
         pound: 0,
         dollar: 0
       },
+      wheat: 0,
       gameWid: 10,
       gameHig: 10,
       settings: {
